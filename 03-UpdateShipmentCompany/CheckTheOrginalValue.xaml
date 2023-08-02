@@ -1,0 +1,517 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="UpdateShipmentCompanyInSeaShipment" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="TotalRows" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_OriginalValue" Type="InArgument(x:Double)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>858.4,2439.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>UpdateShipmentCompanyInSeaShipment_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="UpdateShipmentCompanyInSeaShipment" sap:VirtualizedContainerService.HintSize="739.2,2374.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="676.8,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;Updating Shipment Company&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Transportation and Global Trade Management - Home" sap:VirtualizedContainerService.HintSize="676.8,2080" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="67755405-4977-40cb-b7af-765e6b5dc9ca" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="643.2,1863.2" sap2010:WorkflowViewState.IdRef="Sequence_25">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="TempHoldOriginalValue" />
+              <Variable x:TypeArguments="x:Double" Name="TotalOriginalValue" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:RepeatNumberOfTimesX DisplayName="Repeat Number of Times" sap:VirtualizedContainerService.HintSize="580.8,1376.8" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_1" NumberOfTimes="[TotalRows]" StartAt="1">
+              <ui:RepeatNumberOfTimesX.Body>
+                <ActivityAction x:TypeArguments="x:Int32">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="RecordIndex" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="547.2,1209.6" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="RecordIndex" />
+                      <Variable x:TypeArguments="x:String" Name="StoreNo" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NGetText DisplayName="Get Text '110'" sap:VirtualizedContainerService.HintSize="484.8,157.6" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="67755405-4977-40cb-b7af-765e6b5dc9ca" TextString="[StoreNo]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://otmgtm-test-egxy.otm.em2.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1690459400508?bcKey=MTY5MDQ1OTQwMDUwODow&amp;ct=MzI0OTI2MTE0Njg4OTQ1OTUzNA%3D%3D&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" CvType="AnyWordGroup" DesignTimeRectangle="1116, 313, 125, 34" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'110'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='rgSGSec.2.2.{0}.17' tag='DIV' /&gt;&quot;, RecordIndex)]" FuzzySelectorArgument="[&quot;&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='rgSGSec.2.2.&quot;+RecordIndex.ToString+&quot;.17' tag='DIV' type='' class='sgBodyCol' /&gt;&quot;]" Guid="d3e456ad-5360-4e0f-9b55-23892c85b753" InformativeScreenshot="c31e73c0375a19eb05a799a51138380d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                    <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click '4240.110'" sap:VirtualizedContainerService.HintSize="484.8,157.6" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="67755405-4977-40cb-b7af-765e6b5dc9ca" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://otmgtm-test-egxy.otm.em2.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1690458682161?bcKey=MTY5MDQ1ODY4MjE2Mzow&amp;ct=MzYyMzgyMzE0MjI0NTg4MjYzNg%3D%3D&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" CvTextArgument="4240.110" CvType="Text" DesignTimeRectangle="1271, 313, 88, 34" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'4240.110'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='rgSGSec.2.2.{0}.38' tag='DIV' /&gt;&quot;, RecordIndex)]" FuzzySelectorArgument="[&quot;&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='rgSGSec.2.2.&quot;+RecordIndex.ToString+&quot;.38' tag='DIV' type='' class='sgBodyCol sgBodyNumCol' aaname='4240.110' /&gt;&quot;]" Guid="e021adc0-a5cc-43f6-a452-dfb1e30cdb8b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAmCAYAAABJVvz/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIISURBVGhD7ZbNbQJBDEZTGGXQAnRAAVRBI/TBLddwyhFx4zjJI3HiODYskfgSKX7SaLWzM177jfl5GK88Pj1zae6E9/vATQ/dOHf44XA422/ug/fbwgW0cDEtXEwLF9PCxbRwMS1cTAsX08LFtHAxcuHH43Esl8ux2+3eZ97YbrdjNpt9DO4r9vv9WCwW56tns9l87OcdvGsKrFutVt/iGcTN8qEGn3OsKUMu3KT45CjGC7JDyYo8nU5jvV6P+Xz+RVCMwXtYx/pL2LtiPMPyjbmwlj1WB9cqhkcqnKToTJ+oCYwFcZ8JY54YvsNNmj/EbC7CM2TGeOAPgmcxPw6C4cnmIjLhFEPiFHlNBGTC/V4vyGJ7YUDxUZRhB02sbD/72J81RNUkxMqaxCMR7hOc0nm23neL3xcFMccz1nimdBxkwo1MblVDlYdHIpxk7eSnCEdSTNzLa+EXiMVcE46g+OMTC4kxW7iDRO1vUxxRRiYbmM/2M4hfCWOfF1Vxq/BsDhBun+SKuwuPVN2BnGvdYURBWczqPRm3CgfyZXiyucifEE4xU2VDJijGoPBr3Wb8RDhr/d9brtmnM/Lrwu0++7qoDqEShORqb7UHLj2rhAM1+Hx9E1XIhf93WriYFi6mhYtp4WJauJgWLqaFi2nhYlq4mBYu5otwbnroRne4AO+3hQv49DvGC7BYvhvQ+NJ/AAAAAElFTkSuQmCC" InformativeScreenshot="d148bb4fe2a7c15b30094d6762796afb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="484.8,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;check&quot; + StoreNo +&quot; -&quot; + RecordIndex]" />
+                    <ui:CommentOut DisplayName="Comment Out- ru" sap:VirtualizedContainerService.HintSize="484.8,388" sap2010:WorkflowViewState.IdRef="CommentOut_17">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,269.6" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NGetText DisplayName="Get Text 'OriginalValue'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="67755405-4977-40cb-b7af-765e6b5dc9ca" TextString="[TempHoldOriginalValue]" Version="V3">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="https://otmgtm-test-egxy.otm.em2.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1688902900991?bcKey=MTY4ODkwMjkwMDk5Mjow&amp;ct=MTQ0MDIwNDk1MzM0NzAwOTU1&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" CvType="AnyWordGroup" DesignTimeRectangle="1211, 362, 255, 34" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'7362.320'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='rgSGSec.2.2.{0}.38' tag='DIV' /&gt;&quot;, RecordIndex)]" FuzzySelectorArgument="[&quot;&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='rgSGSec.2.2.&quot;+RecordIndex.ToString+&quot;.38' tag='DIV' type='' class='sgBodyCol sgBodyNumCol' /&gt;&quot;]" Guid="0ca3af5a-1c68-4e96-9456-58c39a0cedb6" InformativeScreenshot="408eabd82f81520f3e21ec7e7fbcf6d4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <ui:CommentOut DisplayName="Comment Out - ru" sap:VirtualizedContainerService.HintSize="484.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_18">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="387.2,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[TempHoldOriginalValue]" />
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <ui:CommentOut DisplayName="Comment Out - ru" sap:VirtualizedContainerService.HintSize="484.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_15">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193.6" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Add OriginalValue to the Total" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Double">[TotalOriginalValue]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Double">[TotalOriginalValue + Convert.ToDouble(TempHoldOriginalValue)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RepeatNumberOfTimesX.Body>
+            </ui:RepeatNumberOfTimesX>
+            <ui:CommentOut DisplayName="Comment Out by ru" sap:VirtualizedContainerService.HintSize="580.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_16">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="624,791.2" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[in_OriginalValue &lt;&gt; TotalOriginalValue]" DisplayName="Check the original value" sap:VirtualizedContainerService.HintSize="561.6,679.2" sap2010:WorkflowViewState.IdRef="If_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="528,496" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="484.8,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Business Rule Exception - the original value doesn't match in the master sheet (&quot;+in_OriginalValue.ToString+&quot;) and OTM (&quot;+TotalOriginalValue.ToString+&quot;)&quot;]" />
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,280.8" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,202.4" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw DisplayName="Throw BRE for Total original value" Exception="[New BusinessRuleException(&quot;the original value doesn't match in the master sheet (&quot;+in_OriginalValue.ToString+&quot;) and OTM (&quot;+TotalOriginalValue.ToString+&quot;)&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                        </ui:CommentOut>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="377.6,326.4" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="300,140" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[RecordIndex &lt;= Convert.ToInt32(TotalOrders)]" DisplayName="update Liner" sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_7">
+                                <ui:InterruptibleWhile.Body>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,822" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Double-click 'Liner'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="67755405-4977-40cb-b7af-765e6b5dc9ca" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://otmgtm-test-egxy.otm.em2.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1688895377716?bcKey=MTY4ODg5NTM3NzcxNzow&amp;ct=MTQ0MDIwNDk1MzM0NzAwOTU1&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" CvTextArgument="MAERSK_LINE" CvType="Text" DesignTimeRectangle="1706, 362, 150, 34" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'MAERSK_LINE'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='rgSGSec.2.2.{0}.20' tag='DIV' /&gt;&quot;, RecordIndex)]" FuzzySelectorArgument="[&quot;&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='rgSGSec.2.2.&quot;+RecordIndex.ToString+&quot;.20' tag='DIV' type='' class='sgBodyCol' aaname='' /&gt;&quot;]" Guid="50a77c40-225e-4a2e-b4c1-e771d2c0463c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAmCAYAAAA894IZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANvSURBVHhe7Ze9blNBEIXzELwILwFvQEVPS0MdiQ4aOkqoQAiJAlEhmjRQEAlBA4KGIgo0iZEIAiGKSz7bR4yH2fvneO3I80mj2Ltzd2fOnnuvs9Oc8v7zF/4kyZlifbXDl4yMVcf0iTaZTKauS5KzxPoqjZasjDRaUoU0WlKFNFpShTRaUoU0WlKFNFpShTRaUoU0WlKFNFpShcFGe/nha3Px+uPm4+G3+cgiP3//aa7d3ZsGny1cw7WXd581x99/zUdn6LoLV++FoWu68qjP82Dv00KOr591Wd9fa/dijT6QF/Uu2PfS6V7aX3tH12h/7U19tg8ffWtcB6ONhgDeLECzV24/D4VjDpG53oviRS3RlqeDsIa5+Wj/v1p8XmQ07RPdFG1QV9S7KBnN1w2+V+aH1rMpjDIazd55+i4UhoNlzottRYsO34taoiuPtQmIDCTa8rTHmEMdazRuTr+f73UrjcbfG/dfLQjKGIcXic2cXln2s/CilmjL05w3UNeayqMurTH2QKPeLSWjvXh7sFA7+F6pb2xd62a00Q6OfkyNZs2CSMxHYjOnMS8gRGMRbXmRgcnTb5jSIfnDXuYwo94tJaNRO2PUz2fwvUr7rTIazSKAROA7omjcim3FFORY0SSqTOFD+7TleZMJ7W9zo/oY129IOz8E37unzWhgdVGv6p0c24MNq+UmspTREEuvT8b12Pdi22tE191bIsrTAWitLriWfP+KVc2qrauWCN+7p8to6o/afK+RjueFpYyGEHp96rUJVmyJZe8+GzpsL2qJUh7fWW+I2dSHP2wYup7gOvUe0WU0YA6j61WuXsnZSqMBIui/TDsmsSVadGDkMUfOskbTuK+tdDC2D4LPtsZovT7Y3iP6GA24AdGGXPXqtT9PLG00vtsnE1ix24SXCcnRwUrUEm15dj3QIfr9/Rqlw9Z6pfojWLMtv6/RNI62qnOrjRYJJbEPj06mcxIqAoOSe3wy+2cCYaPo++RjPfJtPRqzYedLhw2MkW9vpDaoy+9FqP6+RgPtbY3m17XRt8Z1MNhoSTKGQUa79eRNeCdlbE7sPnw9P63NIp9oPel6bRHR6y+ZkUZLqpBGS6qQRkuqkEZLqpBGS6qQRkuqkEZLqpBGS6qwYDS+ZGSsOvKJlqwM66s0WrIy/vmqaf4CsTeVgAnsYesAAAAASUVORK5CYII=" InformativeScreenshot="b1600518e03b16ccd6d697b505cb1087.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                                          <uix:TargetAnchorable.PointOffset>
+                                            <uix:PointOffset X="10" Y="10" />
+                                          </uix:TargetAnchorable.PointOffset>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Shipment company Into 'Liner' " EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="67755405-4977-40cb-b7af-765e6b5dc9ca" Text="[in_ShipmentCompany+RecordIndex.ToString]" Version="V3">
+                                      <uix:NTypeInto.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://otmgtm-test-egxy.otm.em2.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1688895377716?bcKey=MTY4ODg5NTM3NzcxNzow&amp;ct=MTQ0MDIwNDk1MzM0NzAwOTU1&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" CvElementArea="1582, 473, 192, 36" CvTextArea="1587, 481, 107, 18" CvTextArgument="MAERSK_LINE" CvType="InputBox" DesignTimeRectangle="1583, 474, 191, 34" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'MAERSK_LINE'" FullSelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl class='noTbSp' css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;table' tableRow='3' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl class='noTbSp' tag='TABLE' /&gt;&lt;webctrl type='TEXT' tag='INPUT' class='' aaname='' /&gt;" Guid="573c004b-8a0e-4a7c-8255-ad8217817b23" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMMAAAAmCAYAAAB59i+bAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOMSURBVHhe7Z09UhtBEIWV+DzkPgAcgSOQu4oLENtyTM4ljB0S24ETMpcdkzghg3F9eB40Q89Y2hWqsvS+qilp/np6t99bbQSLYox5wGYwpvJohm+/fpe3H76XN+++urntfEPraD7yaAYm33/6Ue7u7uqIMbsJGkfraD7yaAbcYiOYfQGto/nIMzMYs0/YDMZUbAZjKjaDMRWbwZiKzWBMxWYwpmIzGFOZZIabm5tydHRULi4u6shLmDs4OCjX19d15C+3t7fl5OSkLBaLcnV1VUefYB9zvaY9o3VnZ2cPayLsa9fF85VXdk3E68XNIC73h/uU0Z6lfm8P5+ps3fv2WtSIQzyzPrPMcHx8nAoaAzB3eHj4wgz0GadlhUMgqxS0t065ReGythUaeWDWVpDqC+Jkph4x1QyIuT0fMjNk993MY5YZzs/Py3K5rKNPUFDmMjMwR+EvLy9TkWl+qhkgirEncogxsnVTjABTzcADJDvPZtgOs8yAoE9PT58VjzkKS7FaM2gfIojfI1GgI0brmJMYJTSJqUcr0KlGgKlmoM+57XXZDNthlhkoCAVUUYExCoeIWjMwFwXGvrbw2VhGb11mMs7VO3VP4K0gpxoBOG+qGbL8bYbtMNsMCIZfB4mSomm8NUMsKjCH6GJhEYGE27Yo/tG6KCQhwcV1UbBxnpzIfSToEXPMAOyPZszMEK8jtngvzXrMNgOF1KsS4xSVz9YMcY+QCKJBEARjzI1o1yl+jDWCPBCPYigXiXjdeBFiK06GzuqZAThXufFdeWT30WyG2WYAikijr6K1ZmC+fYqpReGwTiIYka3jLJ6oqwqYfPUEzgTJPPnFsVVg31wz6B4zZjNsh42YATHx60CLYzKDip2JVAKWEPhsRZ7RW8c4AlYefMZXjkiWo/IQ5Nzb34Mz55oB6HM2OdoMr89GzKB+FEAUWvzeIiFI2AhA30f01rXx1M/EGZ+4WtcKMru2f7EpM2gcc9sMr89GzABRWBANwDhFpbgZxNHTF0Ho9SlrEgyfvZjEY23MJ4sbxdcTJJAX+Y2uIaLzs8Zce9YqZ7dmyGLT1jGtec4kMxizi9gMxlRshjXQK0v2eqKWveqY/wObwZiKzWBMxWYwpmIzGFOxGYyp2AzGVIZmuL+/rz1jdhu03jUDf57745dftWfMbrP8/LP/J+n9z0rc9qmh9e4/KzFm37EZjHmglD9MvQHfZEMPWQAAAABJRU5ErkJggg==" InformativeScreenshot="b085de428e16a5ca103c4dc3a2255a49.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                      </uix:NTypeInto.Target>
+                                    </uix:NTypeInto>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK' " sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="67755405-4977-40cb-b7af-765e6b5dc9ca" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://otmgtm-test-egxy.otm.em2.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1688895377716?bcKey=MTY4ODg5NTM3NzcxNzow&amp;ct=MTQ0MDIwNDk1MzM0NzAwOTU1&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" CvTextArgument="OK" CvType="Text" DesignTimeRectangle="1724, 519, 43, 30" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'OK'" FullSelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' tableRow='6' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='button' tag='BUTTON' class='tm_dialog_footer-button' aaname='OK' check:innerText='OK' /&gt;" Guid="f40a4fe3-7ba6-44a9-b614-377eb6c23d89" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAiCAYAAADPuYByAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAL6SURBVFhH3ZjrThNBFMd9B6Mvo1x8B8GX4FILL4AkFgq+gajVVNviAyj4xZYADaLGD0hTTZBLabf3lt6g9Dj/gZnstjvdNv0yMMk/p3PO2Tm/M53tZe/QDR63A75SrdOv2AFtfP+trcAHTjEkPAKHCYPqjXOmhpYWfOAUQ8Kjs2L5THuBUwwLfKFU1l5K+LxNslk6xJXwuUKJcsUr5a+tZa5B3BleY6uEz+aLlC0waWxvJ3wmV9BeSvj0dYLOVglvZPOUZurVRr/t0tDQA7p/767UxOQEHSWSlrxn8/M89nn9i8X/6rVPXrfGYqo6ZtsVvleZC7drePghb0zkLnkXuT+yEZE+NCLyP66uUq3ekLFuUsKnMrmetL2zS6MjQ7KwGLVajWZn3dzvck3T4ckpzxfwYQaP+ae1dQt44/zCsn43DQzv97/nhV8sL1kK44skk0nTk/ExejQ6TLs/fnK/GR6Nj5ga7wccUsIn01lH/TtOkNvt4sU3tzY74oXSGS0veXnc7/dzn4BfeblCI+xI4TXeoWKp1HG9kwaCP00ZNDPzlAOEIxHbnGAwyOOBQIDPBXy7fL53Hdc6SQl/amQclUimLPB2Od7FBR4PfAjwuRkeRy0a3eavcd9sRXc6ru+m7vCsOzuLrmGz7PdFKBTixRcWPB3x/fgfGh97zM/83h5bk/kFPMAvmk3K5Qvyxp52TdHB0Ym83qn+QDsPAQpwKD43Nyf9gJianuR+wKWzOe4X8LhHMMfX/H4sJtd443sr13DSwPDlSpVW2ScFCtsJUIADJPIFvPmYYY1l9k7A38/xUcInUmlKsIReLP5TxuNxuXtC2PFqtcbhRL6A/xoOW9YxDIN/rCLm8Ty3rdNu1fBI6EMAbF1fL0bz8pIybMfNeTjnGJVa3eLHP6NW62oF5JhjKinhT9ChSTrO1TuPJHSosVXvfNLg3XVYIQ3ianhzoqZSwh+jUyadrXrnkWTuVMO5LTyeAe79PeTd6Srw2T6rvNFPiW/eIPoP9BSbna2t+DYAAAAASUVORK5CYII=" InformativeScreenshot="29ba8258e8c478ec3c493daeeee4d104.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <Assign DisplayName="Increment index by 1" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">[RecordIndex]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">[RecordIndex+1]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </ui:InterruptibleWhile.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InterruptibleWhile>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;The orginal value is the same in the master sheet and OTM :&quot;+TotalOriginalValue.ToString]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="580.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="388,334" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[RecordIndex &lt;= Convert.ToInt32(TotalOrders)]" DisplayName="Get original value for each record" sap:VirtualizedContainerService.HintSize="346,246" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_4">
+                    <ui:InterruptibleWhile.Body>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="TempHoldOriginalValue" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </ui:InterruptibleWhile.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InterruptibleWhile>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="483.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="452,448" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[in_OriginalValue &lt;&gt; TotalOriginalValue]" DisplayName="Check the original value" sap:VirtualizedContainerService.HintSize="410,360" sap2010:WorkflowViewState.IdRef="If_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw DisplayName="Throw BRE for Total original value" Exception="[New BusinessRuleException(&quot;the original value doesn't match in the master sheet and OTM&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="300,140" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[RecordIndex &lt;= Convert.ToInt32(TotalOrders)]" DisplayName="update Liner" sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_6">
+                          <ui:InterruptibleWhile.Body>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,823" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Double-click 'Liner'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="67755405-4977-40cb-b7af-765e6b5dc9ca" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://otmgtm-test-egxy.otm.em2.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1688895377716?bcKey=MTY4ODg5NTM3NzcxNzow&amp;ct=MTQ0MDIwNDk1MzM0NzAwOTU1&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" CvTextArgument="MAERSK_LINE" CvType="Text" DesignTimeRectangle="1706, 362, 150, 34" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'MAERSK_LINE'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='rgSGSec.2.2.{0}.20' tag='DIV' /&gt;&quot;, RecordIndex)]" FuzzySelectorArgument="[&quot;&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='rgSGSec.2.2.&quot;+RecordIndex.ToString+&quot;.20' tag='DIV' type='' class='sgBodyCol' aaname='' /&gt;&quot;]" Guid="50a77c40-225e-4a2e-b4c1-e771d2c0463c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAmCAYAAAA894IZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANvSURBVHhe7Ze9blNBEIXzELwILwFvQEVPS0MdiQ4aOkqoQAiJAlEhmjRQEAlBA4KGIgo0iZEIAiGKSz7bR4yH2fvneO3I80mj2Ltzd2fOnnuvs9Oc8v7zF/4kyZlifbXDl4yMVcf0iTaZTKauS5KzxPoqjZasjDRaUoU0WlKFNFpShTRaUoU0WlKFNFpShTRaUoU0WlKFNFpShcFGe/nha3Px+uPm4+G3+cgiP3//aa7d3ZsGny1cw7WXd581x99/zUdn6LoLV++FoWu68qjP82Dv00KOr591Wd9fa/dijT6QF/Uu2PfS6V7aX3tH12h/7U19tg8ffWtcB6ONhgDeLECzV24/D4VjDpG53oviRS3RlqeDsIa5+Wj/v1p8XmQ07RPdFG1QV9S7KBnN1w2+V+aH1rMpjDIazd55+i4UhoNlzottRYsO34taoiuPtQmIDCTa8rTHmEMdazRuTr+f73UrjcbfG/dfLQjKGIcXic2cXln2s/CilmjL05w3UNeayqMurTH2QKPeLSWjvXh7sFA7+F6pb2xd62a00Q6OfkyNZs2CSMxHYjOnMS8gRGMRbXmRgcnTb5jSIfnDXuYwo94tJaNRO2PUz2fwvUr7rTIazSKAROA7omjcim3FFORY0SSqTOFD+7TleZMJ7W9zo/oY129IOz8E37unzWhgdVGv6p0c24MNq+UmspTREEuvT8b12Pdi22tE191bIsrTAWitLriWfP+KVc2qrauWCN+7p8to6o/afK+RjueFpYyGEHp96rUJVmyJZe8+GzpsL2qJUh7fWW+I2dSHP2wYup7gOvUe0WU0YA6j61WuXsnZSqMBIui/TDsmsSVadGDkMUfOskbTuK+tdDC2D4LPtsZovT7Y3iP6GA24AdGGXPXqtT9PLG00vtsnE1ix24SXCcnRwUrUEm15dj3QIfr9/Rqlw9Z6pfojWLMtv6/RNI62qnOrjRYJJbEPj06mcxIqAoOSe3wy+2cCYaPo++RjPfJtPRqzYedLhw2MkW9vpDaoy+9FqP6+RgPtbY3m17XRt8Z1MNhoSTKGQUa79eRNeCdlbE7sPnw9P63NIp9oPel6bRHR6y+ZkUZLqpBGS6qQRkuqkEZLqpBGS6qQRkuqkEZLqpBGS6qwYDS+ZGSsOvKJlqwM66s0WrIy/vmqaf4CsTeVgAnsYesAAAAASUVORK5CYII=" InformativeScreenshot="b1600518e03b16ccd6d697b505cb1087.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable.PointOffset>
+                                      <uix:PointOffset X="10" Y="10" />
+                                    </uix:TargetAnchorable.PointOffset>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Shipment company Into 'Liner' " EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="67755405-4977-40cb-b7af-765e6b5dc9ca" Text="[in_ShipmentCompany+RecordIndex.ToString]" Version="V3">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://otmgtm-test-egxy.otm.em2.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1688895377716?bcKey=MTY4ODg5NTM3NzcxNzow&amp;ct=MTQ0MDIwNDk1MzM0NzAwOTU1&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" CvElementArea="1582, 473, 192, 36" CvTextArea="1587, 481, 107, 18" CvTextArgument="MAERSK_LINE" CvType="InputBox" DesignTimeRectangle="1583, 474, 191, 34" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'MAERSK_LINE'" FullSelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl class='noTbSp' css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;table' tableRow='3' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl class='noTbSp' tag='TABLE' /&gt;&lt;webctrl type='TEXT' tag='INPUT' class='' aaname='' /&gt;" Guid="573c004b-8a0e-4a7c-8255-ad8217817b23" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMMAAAAmCAYAAAB59i+bAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOMSURBVHhe7Z09UhtBEIWV+DzkPgAcgSOQu4oLENtyTM4ljB0S24ETMpcdkzghg3F9eB40Q89Y2hWqsvS+qilp/np6t99bbQSLYox5wGYwpvJohm+/fpe3H76XN+++urntfEPraD7yaAYm33/6Ue7u7uqIMbsJGkfraD7yaAbcYiOYfQGto/nIMzMYs0/YDMZUbAZjKjaDMRWbwZiKzWBMxWYwpmIzGFOZZIabm5tydHRULi4u6shLmDs4OCjX19d15C+3t7fl5OSkLBaLcnV1VUefYB9zvaY9o3VnZ2cPayLsa9fF85VXdk3E68XNIC73h/uU0Z6lfm8P5+ps3fv2WtSIQzyzPrPMcHx8nAoaAzB3eHj4wgz0GadlhUMgqxS0t065ReGythUaeWDWVpDqC+Jkph4x1QyIuT0fMjNk993MY5YZzs/Py3K5rKNPUFDmMjMwR+EvLy9TkWl+qhkgirEncogxsnVTjABTzcADJDvPZtgOs8yAoE9PT58VjzkKS7FaM2gfIojfI1GgI0brmJMYJTSJqUcr0KlGgKlmoM+57XXZDNthlhkoCAVUUYExCoeIWjMwFwXGvrbw2VhGb11mMs7VO3VP4K0gpxoBOG+qGbL8bYbtMNsMCIZfB4mSomm8NUMsKjCH6GJhEYGE27Yo/tG6KCQhwcV1UbBxnpzIfSToEXPMAOyPZszMEK8jtngvzXrMNgOF1KsS4xSVz9YMcY+QCKJBEARjzI1o1yl+jDWCPBCPYigXiXjdeBFiK06GzuqZAThXufFdeWT30WyG2WYAikijr6K1ZmC+fYqpReGwTiIYka3jLJ6oqwqYfPUEzgTJPPnFsVVg31wz6B4zZjNsh42YATHx60CLYzKDip2JVAKWEPhsRZ7RW8c4AlYefMZXjkiWo/IQ5Nzb34Mz55oB6HM2OdoMr89GzKB+FEAUWvzeIiFI2AhA30f01rXx1M/EGZ+4WtcKMru2f7EpM2gcc9sMr89GzABRWBANwDhFpbgZxNHTF0Ho9SlrEgyfvZjEY23MJ4sbxdcTJJAX+Y2uIaLzs8Zce9YqZ7dmyGLT1jGtec4kMxizi9gMxlRshjXQK0v2eqKWveqY/wObwZiKzWBMxWYwpmIzGFOxGYyp2AzGVIZmuL+/rz1jdhu03jUDf57745dftWfMbrP8/LP/J+n9z0rc9qmh9e4/KzFm37EZjHmglD9MvQHfZEMPWQAAAABJRU5ErkJggg==" InformativeScreenshot="b085de428e16a5ca103c4dc3a2255a49.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                </uix:NTypeInto.Target>
+                              </uix:NTypeInto>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK' " sap:VirtualizedContainerService.HintSize="433.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="67755405-4977-40cb-b7af-765e6b5dc9ca" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://otmgtm-test-egxy.otm.em2.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1688895377716?bcKey=MTY4ODg5NTM3NzcxNzow&amp;ct=MTQ0MDIwNDk1MzM0NzAwOTU1&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" CvTextArgument="OK" CvType="Text" DesignTimeRectangle="1724, 519, 43, 30" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'OK'" FullSelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' tableRow='6' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='button' tag='BUTTON' class='tm_dialog_footer-button' aaname='OK' check:innerText='OK' /&gt;" Guid="f40a4fe3-7ba6-44a9-b614-377eb6c23d89" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAiCAYAAADPuYByAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAL6SURBVFhH3ZjrThNBFMd9B6Mvo1x8B8GX4FILL4AkFgq+gajVVNviAyj4xZYADaLGD0hTTZBLabf3lt6g9Dj/gZnstjvdNv0yMMk/p3PO2Tm/M53tZe/QDR63A75SrdOv2AFtfP+trcAHTjEkPAKHCYPqjXOmhpYWfOAUQ8Kjs2L5THuBUwwLfKFU1l5K+LxNslk6xJXwuUKJcsUr5a+tZa5B3BleY6uEz+aLlC0waWxvJ3wmV9BeSvj0dYLOVglvZPOUZurVRr/t0tDQA7p/767UxOQEHSWSlrxn8/M89nn9i8X/6rVPXrfGYqo6ZtsVvleZC7drePghb0zkLnkXuT+yEZE+NCLyP66uUq3ekLFuUsKnMrmetL2zS6MjQ7KwGLVajWZn3dzvck3T4ckpzxfwYQaP+ae1dQt44/zCsn43DQzv97/nhV8sL1kK44skk0nTk/ExejQ6TLs/fnK/GR6Nj5ga7wccUsIn01lH/TtOkNvt4sU3tzY74oXSGS0veXnc7/dzn4BfeblCI+xI4TXeoWKp1HG9kwaCP00ZNDPzlAOEIxHbnGAwyOOBQIDPBXy7fL53Hdc6SQl/amQclUimLPB2Od7FBR4PfAjwuRkeRy0a3eavcd9sRXc6ru+m7vCsOzuLrmGz7PdFKBTixRcWPB3x/fgfGh97zM/83h5bk/kFPMAvmk3K5Qvyxp52TdHB0Ym83qn+QDsPAQpwKD43Nyf9gJianuR+wKWzOe4X8LhHMMfX/H4sJtd443sr13DSwPDlSpVW2ScFCtsJUIADJPIFvPmYYY1l9k7A38/xUcInUmlKsIReLP5TxuNxuXtC2PFqtcbhRL6A/xoOW9YxDIN/rCLm8Ty3rdNu1fBI6EMAbF1fL0bz8pIybMfNeTjnGJVa3eLHP6NW62oF5JhjKinhT9ChSTrO1TuPJHSosVXvfNLg3XVYIQ3ianhzoqZSwh+jUyadrXrnkWTuVMO5LTyeAe79PeTd6Srw2T6rvNFPiW/eIPoP9BSbna2t+DYAAAAASUVORK5CYII=" InformativeScreenshot="29ba8258e8c478ec3c493daeeee4d104.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <Assign DisplayName="Increment index by 1" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[RecordIndex]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[RecordIndex+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </ui:InterruptibleWhile.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InterruptibleWhile>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="483.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Done&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="18e6d1a134b06de95ade71df7b70fbce.jpg" Selector="&lt;html app='chrome.exe' url='*' /&gt;" Title="Transportation and Global Trade Management - Home" Url="*" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

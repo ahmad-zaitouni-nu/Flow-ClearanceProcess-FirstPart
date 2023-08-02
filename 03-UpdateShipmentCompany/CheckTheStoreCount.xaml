@@ -1,0 +1,181 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="NavigateIntoOrderManagment" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StoreCount" Type="InArgument(x:Int32)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>858.4,1460</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>NavigateIntoOrderManagment_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="NavigateIntoOrderManagment" sap:VirtualizedContainerService.HintSize="569.6,1395.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="507.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Check Store Count&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Transportation and Global Trade Management - Home" sap:VirtualizedContainerService.HintSize="507.2,1100.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="67755405-4977-40cb-b7af-765e6b5dc9ca" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="473.6,884" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="TotalOrders" />
+              <Variable x:TypeArguments="x:Int32" Default="1" Name="RecordIndex" />
+              <Variable x:TypeArguments="x:Double" Name="TotalOriginalValue" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGetText DisplayName="Get Text 'Total Found'" sap:VirtualizedContainerService.HintSize="411.2,157.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="67755405-4977-40cb-b7af-765e6b5dc9ca" TextString="[TotalOrders]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://otmgtm-test-egxy.otm.em2.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1688895377716?bcKey=MTY4ODg5NTM3NzcxNzow&amp;ct=MTQ0MDIwNDk1MzM0NzAwOTU1&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" DesignTimeRectangle="306, 176, 7, 18" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'3'" FullSelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='3' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='text nw' /&gt;" Guid="d50409d6-4344-46fb-a4ec-aa7772890487" InformativeScreenshot="7627a8daee7120f4822d72a933e21e36.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="Total Found:" CvType="Text" DesignTimeRectangle="225, 176, 81, 18" ElementType="Text" FriendlyName="'Total Found'" FullSelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='text bold nw' aaname='Total Found: ' check:innerText='Total Found:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFUAAAAWCAYAAACxOdCYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANgSURBVFhH7ZbBaxpBFMb7h+1pISCEhEBz2pMgGArtJZpD7KEJNC1EoeglCRj2IDkED7LQsJBSqASClbAuxWCwGCQi1mBIsERScvj6ZnZXFrsxI7o97eGDXWfem+/9nHmzLx7/PCDQbBVA9UEBVB8UQPVBAVQfFED1QQFUHxRA9UE21A60VQmS5K241vkncCq1C4g/mdfby8w9CMv2s1pA13PcLQMZ8mpD7aNVKaF8ypRDghXyNme/l2Be9UeCR9WEvvkaStbwGPOQCNRIGrq9vpgHvzQB1LM0Mmeex9+iLWUEAXFNGCMCVWhn/A9N7kcQah8NPY2EErKO47yCRLaE7oDGbEDuo8r+rcdrAwebUSzOWb+Fokl8vbLzTQP1rg49sw5l3s6rrEP97uTxiB1Zy8ywuDROLg6xsSTTcwgr21/QYrWw+YMOytmY5XtuAfHcEQ6GOfsw9xRIyg7M3/Z8DwlBbWkxyJKCD/kSGu0mzPwWFJqj7Bm4H/Rxe11EisWkivTco98orpKj+QZa9N79cYg4M+kUKwKV5XOJ/1GDJrQ1AqFsIX9aR/fSQP49FUnediusPYhClRH+WECN1aKy2iRsHPf4eE218nHv7TpO9qJ8XBQqyy8A1cAuAZFTJdy75tWyy7R4Eic8+fPH39khJnsXgTrSUxvXNFbZoQJlpE5d/XVQhfqS5m8XyZ8o1HXoLB+PL7m8e9VaRz4ykvMZPQ/115EngC7tXkmKQWt7xDDdVKHnkkhEwgjzY8aKmQCqRxHdz+41Hbnni0K1fXC5vHvW+rSfpzTdTp0jc7wXjcY0kY8yI/swL3u4vemjPOlO9SpizE6V+dod6GsUGzlEwxm/KuCNa62xUO1da+Wyx52TMFuo7j5j9dSalrR6qlodxjDwHOJP+vy5cN5z1Ld6aJ3tWz11WqisQIXGhj21Ci1leVPPrTk1lbUl8qpVec9VWQ92rTUWKvXMcorNV5Ci+BbPH8XyEOr4nmpmrLxCUB8HPQ5yxT7G8lKUL3rr3Jik1vEWwgwc3Zhqhb3TfH5D0+2aKUL/xJ6nhMpEbUXbdr4qZCy+SkI7ty4ZrrsqDtYW+OUiL71D/ltO/Pjz+DrPH+LxMfqyMFx+xkO1WqLnRRVoWgVQfVAA1QcFUGeuB/wF8XyVCs2a5uUAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <If Condition="[TotalOrders&lt;&gt; in_StoreCount.ToString]" DisplayName="Check number of stores retrieved" sap:VirtualizedContainerService.HintSize="411.2,571.2" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="377.6,305.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334.4,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Business Exception - the number of stores doesn't match in the master sheet and OTM&quot;]" />
+                  <Throw DisplayName="Throw BRE for Total store list" Exception="[New BusinessRuleException(&quot;the number of stores doesn't match in the master sheet and OTM&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="18e6d1a134b06de95ade71df7b70fbce.jpg" Selector="&lt;html app='chrome.exe' url='*' /&gt;" Title="Transportation and Global Trade Management - Home" Url="*" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
