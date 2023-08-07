@@ -1122,7 +1122,7 @@
                   </Transition.To>
                   <Transition.Condition>[systemException IsNot Nothing and retry &gt;= maxRetry]</Transition.Condition>
                 </Transition>
-                <Transition DisplayName="Success" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_12">
+                <Transition DisplayName="Success" sap:VirtualizedContainerService.HintSize="533.6,510.4" sap2010:WorkflowViewState.IdRef="Transition_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">583.3199999999999,544.3 583.3199999999999,574.3 550.2,574.3 550.2,623.5</av:PointCollection>
@@ -2448,7 +2448,7 @@
                     </State>
                   </Transition.To>
                   <Transition.Action>
-                    <Assign DisplayName="Reset ReTry" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                    <Assign DisplayName="Reset ReTry" sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_26">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[retry]</OutArgument>
                       </Assign.To>
