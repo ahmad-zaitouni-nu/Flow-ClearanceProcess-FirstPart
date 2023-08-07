@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1242,1049</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>500,970</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -133,7 +133,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;" DisplayName="Process" sap:VirtualizedContainerService.HintSize="530,984" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;" DisplayName="Process" sap:VirtualizedContainerService.HintSize="510,905" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="storesCount" />
       <Variable x:TypeArguments="x:Double" Name="orginalDollarValue" />
@@ -146,7 +146,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="468,85" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="468,83" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[body]</OutArgument>
       </Assign.To>
@@ -165,7 +165,7 @@
       </Assign.Value>
     </Assign>
     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="468,90" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[in_InvoicesPath]" />
-    <Assign sap:VirtualizedContainerService.HintSize="468,81" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="468,82" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[Invoices]</OutArgument>
       </Assign.To>
@@ -173,13 +173,13 @@
         <InArgument x:TypeArguments="s:String[]">[System.IO.Directory.GetFiles(in_InvoicesPath)]</InArgument>
       </Assign.Value>
     </Assign>
-    <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" ApplicationId="[io_config(&quot;Office365AppID&quot;)]" AuthenticationType="InteractiveToken" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="468,440" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[credentials(&quot;BotEmailCreds&quot;).Value]" Services="Files, Mail, Shared" Tenant="[io_config(&quot;Office365Tenant&quot;)]" Timeout="300000" Username="[credentials(&quot;BotEmailCreds&quot;).Key]">
+    <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" ApplicationId="[io_config(&quot;Office365AppID&quot;)]" ApplicationSecret="[io_config(&quot;Office365Secret&quot;)]" AuthenticationType="ApplicationIdAndSecret" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="468,442" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[credentials(&quot;BotEmailCreds&quot;).Value]" Services="Files, Mail, Shared" Tenant="[io_config(&quot;Office365Tenant&quot;)]" Timeout="300000" Username="[credentials(&quot;BotEmailCreds&quot;).Key]">
       <uma:Office365ApplicationScope.Body>
         <ActivityAction x:TypeArguments="mg:GraphServiceClient">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
           </ActivityAction.Argument>
-          <umam:SendMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" ReplyTo="{x:Null}" AttachmentsCollection="[Invoices]" Body="[body]" DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="434,353" sap2010:WorkflowViewState.IdRef="SendMail_1" Importance="Normal" IsBodyHTML="False" IsDraft="False" Subject="[io_config(&quot;Email_Subject_Invoice&quot;)]" To="[io_config(&quot;BrokerEmail&quot;).Split(&quot;;&quot;c)]">
+          <umam:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" ReplyTo="{x:Null}" Account="[credentials(&quot;BotEmailCreds&quot;).Key]" AttachmentsCollection="[Invoices]" Body="[body]" DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="434,355" sap2010:WorkflowViewState.IdRef="SendMail_1" Importance="Normal" IsBodyHTML="False" IsDraft="False" Subject="[io_config(&quot;Email_Subject_Invoice&quot;)]" To="[io_config(&quot;BrokerEmail&quot;).Split(&quot;;&quot;c)]">
             <umam:SendMail.Attachments>
               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
             </umam:SendMail.Attachments>

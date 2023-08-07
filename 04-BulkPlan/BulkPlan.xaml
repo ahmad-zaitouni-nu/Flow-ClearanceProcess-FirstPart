@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1176.8,5824.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1157,5771</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SequenceSteps9to12_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,7 +121,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SequenceSteps9to12" sap:VirtualizedContainerService.HintSize="1187.2,5760" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="SequenceSteps9to12" sap:VirtualizedContainerService.HintSize="1167,5706" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="OrdersFailedToPlan" />
       <Variable x:TypeArguments="x:String" Name="OrdersPlanned" />
@@ -131,13 +131,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Collection Orders Result" sap:VirtualizedContainerService.HintSize="1124.8,1355.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="2e56cb0f-00f9-4694-a54b-bd68e31b8746" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Collection Orders Result" sap:VirtualizedContainerService.HintSize="1125,1329" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="2e56cb0f-00f9-4694-a54b-bd68e31b8746" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do 'Select Bulk Plan- Buy from Actions'" sap:VirtualizedContainerService.HintSize="472.8,1138.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do 'Select Bulk Plan- Buy from Actions'" sap:VirtualizedContainerService.HintSize="452,1112" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="selected" />
             </Sequence.Variables>
@@ -146,12 +146,12 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGetText DisplayName="Get Text 'Selected: 0'" sap:VirtualizedContainerService.HintSize="410.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="2e56cb0f-00f9-4694-a54b-bd68e31b8746" TextString="[selected]" Version="V3">
+            <uix:NGetText DisplayName="Get Text 'Selected: 0'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="2e56cb0f-00f9-4694-a54b-bd68e31b8746" TextString="[selected]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://otmgtm-egxy.otmgtm.eu-frankfurt-1.ocs.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1690175155210?bcKey=MTY5MDE3NTE1NTIxMTow&amp;ct=MTY0MDQzMzU2NDQ0NTQ2Mjc2NA%3D%3D&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" CvElementArea="1302, 169, 68, 35" CvTextArea="1311, 179, 54, 12" CvTextArgument="Selected: 0" CvType="Button" DesignTimeRectangle="1312, 177, 53, 18" DesignTimeScaleFactor="1" FriendlyName="'Selected: 0'" FullSelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='frToolbar' tag='TABLE' /&gt;&lt;webctrl class='sgCaptionCol' tableRow='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl id='frToolbar' tag='TABLE' /&gt;&lt;webctrl class='sgCaptionCol' type='' tag='DIV' aaname='' /&gt;" Guid="a3d61df8-d79d-4d4a-96aa-b5be94518489" InformativeScreenshot="d531f0ee27e295858753cc92049a52ce.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NGetText.Target>
             </uix:NGetText>
-            <If Condition="[selected.Contains(&quot;0&quot;)]" sap:VirtualizedContainerService.HintSize="410.4,430.4" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[selected.Contains(&quot;0&quot;)]" sap:VirtualizedContainerService.HintSize="410,427" sap2010:WorkflowViewState.IdRef="If_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -159,13 +159,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376.8,247.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheck Action="Toggle" DisplayName="Check/Uncheck 'Checkbox to select container'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="2e56cb0f-00f9-4694-a54b-bd68e31b8746" Version="V3">
+                  <uix:NCheck Action="Toggle" DisplayName="Check/Uncheck 'Checkbox to select container'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="2e56cb0f-00f9-4694-a54b-bd68e31b8746" Version="V3">
                     <uix:NCheck.Target>
                       <uix:TargetAnchorable BrowserURL="https://otmgtm-test-egxy.otm.em2.oraclecloud.com/GC3/glog.webserver.finder.ResultServlet/1689164573903?bcKey=MTY4OTE2NDU3MzkwMzow&amp;ct=MTc3OTcxMDcxMjcxODMyOTI3OQ%3D%3D&amp;query_name=glog.server.query.order.OrderReleaseQuery&amp;finder_set_gid=FPL.FL_SCC_INBOUND_ORDER1" CvType="CheckBox" DesignTimeRectangle="33, 327, 19, 19" DesignTimeScaleFactor="1.25" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='checkbox' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mainIFrame' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='checkbox' class='sgHeadCheck' aaname='' /&gt;" Guid="df2626b6-4303-4752-ab74-1917af019dfb" InformativeScreenshot="7e1bf35ec484ca6a2db526d818fd2e23.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Collection Orders Result' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -317,22 +317,22 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <If Condition="[OrdersPlanned.Trim&lt;&gt;&quot;0&quot; Or  OrdersFailedToPlan=&quot;0&quot;]" DisplayName="If to Check Orders Planned equals 1" sap:VirtualizedContainerService.HintSize="1124.8,1158.4" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[OrdersPlanned.Trim&lt;&gt;&quot;0&quot; Or  OrdersFailedToPlan=&quot;0&quot;]" DisplayName="If to Check Orders Planned equals 1" sap:VirtualizedContainerService.HintSize="1125,1154" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="528,975.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence sap:VirtualizedContainerService.HintSize="528,972" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="484.8,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;SME Email - The Bot Can't Do Bulk Plan Action Orders Planned=&quot; &amp; OrdersPlanned &amp; &quot; and Orders Failed To Plan=&quot; &amp; OrdersFailedToPlan]" />
-          <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" ApplicationId="[io_config(&quot;Office365AppID&quot;)]" AuthenticationType="InteractiveToken" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="484.8,439.2" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[credentials(&quot;BotEmailCreds&quot;).Value]" Services="Files, Mail, Shared" Tenant="[io_config(&quot;Office365Tenant&quot;)]" Timeout="300000" Username="[credentials(&quot;BotEmailCreds&quot;).Key]">
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="486,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;SME Email - The Bot Can't Do Bulk Plan Action Orders Planned=&quot; &amp; OrdersPlanned &amp; &quot; and Orders Failed To Plan=&quot; &amp; OrdersFailedToPlan]" />
+          <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" ApplicationId="[io_config(&quot;Office365AppID&quot;)]" ApplicationSecret="[io_config(&quot;Office365Secret&quot;)]" AuthenticationType="ApplicationIdAndSecret" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="486,438" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[credentials(&quot;BotEmailCreds&quot;).Value]" Services="Files, Mail, Shared" Tenant="[io_config(&quot;Office365Tenant&quot;)]" Timeout="300000" Username="[credentials(&quot;BotEmailCreds&quot;).Key]">
             <uma:Office365ApplicationScope.Body>
               <ActivityAction x:TypeArguments="mg:GraphServiceClient">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
                 </ActivityAction.Argument>
-                <umam:SendMail Account="{x:Null}" AttachmentsCollection="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" ReplyTo="{x:Null}" Body="[&quot;Please note that there is an order failed for this container number : &quot; +in_ContainerData(&quot;Container No.&quot;)]" DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="433.6,352.8" sap2010:WorkflowViewState.IdRef="SendMail_1" Importance="Normal" IsBodyHTML="False" IsDraft="False" Subject="[&quot;Container - &quot; + in_ContainerData(&quot;Container No.&quot;)]" To="[io_config(&quot;SME_Email&quot;).Split(&quot;;&quot;c)]">
+                <umam:SendMail AttachmentsCollection="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" ReplyTo="{x:Null}" Account="[credentials(&quot;BotEmailCreds&quot;).Key]" Body="[&quot;Please note that there is an order failed for this container number : &quot; +in_ContainerData(&quot;Container No.&quot;)]" DisplayName="Send Mail" sap:VirtualizedContainerService.HintSize="434,351" sap2010:WorkflowViewState.IdRef="SendMail_1" Importance="Normal" IsBodyHTML="False" IsDraft="False" Subject="[&quot;Container - &quot; + in_ContainerData(&quot;Container No.&quot;)]" To="[io_config(&quot;SME_Email&quot;).Split(&quot;;&quot;c)]">
                   <umam:SendMail.Attachments>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
                   </umam:SendMail.Attachments>
@@ -352,7 +352,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uma:Office365ApplicationScope>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,280.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,281" sap2010:WorkflowViewState.IdRef="CommentOut_1">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,202.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <sap:WorkflowViewStateService.ViewState>
